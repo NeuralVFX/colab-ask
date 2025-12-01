@@ -1,10 +1,7 @@
 # colab-ask
 An LLM assistant magic command for Google Colab notebooks. Ask questions about your notebook with full context including code, outputs, and images.
 
-<img src="https://github.com/NeuralVFX/colab-ask/raw/main/assets/ask-example.gif" width="500" alt="Ask Example Animation">
-
-**Change model:**
-`%set_model claude-haiku-4-5-20251001`
+<img src="https://github.com/NeuralVFX/colab-ask/raw/main/assets/ask-example.gif" width="600" alt="Ask Example Animation">
 
 ## Quick Start
 In a Colab session, run this:
@@ -18,6 +15,9 @@ load_ext colab_ask
 %%ask
 What does this notebook do so far?
 ```
+
+**Change model:**
+`%set_model claude-haiku-4-5-20251001`
 
 **Change system prompt:**
 ```
