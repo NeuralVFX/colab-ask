@@ -4,8 +4,8 @@ An LLM assistant magic command for Google Colab notebooks. Ask questions about y
 
 ## Quick Start
 In a Colab session, run this:
-'''!pip install colab-ask
-load_ext colab_ask'''
+```!pip install colab-ask
+load_ext colab_ask```
 
 **Then use `%%ask` in any cell:**
 ```
