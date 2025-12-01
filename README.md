@@ -2,48 +2,41 @@
 
 An LLM assistant magic command for Google Colab notebooks. Ask questions about your notebook with full context including code, outputs, and images.
 
-## Installation
-`pip install colab-ask`
-
 ## Quick Start
+In a Colab session, run this:
+'''!pip install colab-ask
+load_ext colab_ask'''
 
-#### Load The Extension
-`%load_ext colab_ask`
-
-##### Then use `%%ask` in any cell:
+**Then use `%%ask` in any cell:**
 ```
 %%ask
 What does this notebook do so far?
 ```
-## Features
-- 📝 Full notebook context (code, markdown, outputs)
-- 🖼️ Image understanding (plots, diagrams)
-- 💬 Conversation history across cells
-- 🎨 Syntax-highlighted code responses
-- ⚡ Streaming responses
-- 🔧 Multiple LLM support (Claude, GPT, Gemini)
-
-## Configuration
-
 **Change model:**
 `%set_model claude-haiku-4-5-20251001`
 
-Copied!
 **Change system prompt:**
 ```
 %%set_sys
-You are a teacher, and the user is your student.\n
-Please be kind, and helpfull in all situations.\n
+You are a teacher, and the user is your student.
+Please be kind, and helpfull in all situations.
 Help the student explore the problems they encounter playfully!
 ```
 
-## API Keys
+## Supported Models
+This uses LiteLLM under the hood, you can use any model it can
+You can switch models using `%set_model`. Common options include:
+* `gpt-4o` / `gpt-4-turbo`
+* `claude-3-5-sonnet` / `claude-3-opus`
+* `gemini-1.5-pro`
 
-Automatically uses your API keys in Colab Secrets:
-- `ANTHROPIC_API_KEY`
-- `OPENAI_API_KEY`
-- `GEMINI_API_KEY`
+*Note: You must have the corresponding API key in your Colab Secrets for the model you choose.*
 
 ## Requirements
 - Google Colab
 - API key for your chosen LLM
+
+## 🔒 Privacy & Data
+* **Direct Communication:** Your notebook data is sent directly from your Colab instance to the LLM provider (OpenAI/Anthropic/Google). It does not pass through any intermediate middleware servers.
+* **Secrets Safety:** `colab-ask`  Colab Secrets from the context context to prevent leaking API keys to the LLM.
+
