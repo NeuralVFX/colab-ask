@@ -1,5 +1,5 @@
 # colab-ask
-
+![Ask Example Animation](https://github.com/NeuralVFX/colab-ask/raw/main/assets/ask-example.gif)
 An LLM assistant magic command for Google Colab notebooks. Ask questions about your notebook with full context including code, outputs, and images.
 
 ## Quick Start
