@@ -24,11 +24,9 @@ Help the student explore the problems they encounter playfully!
 ```
 
 ## Supported Models
-This uses LiteLLM under the hood, you can use any model it can
-You can switch models using `%set_model`. Common options include:
-* `gpt-4o` / `gpt-4-turbo`
-* `claude-3-5-sonnet` / `claude-3-opus`
-* `gemini-1.5-pro`
+This uses LiteLLM under the hood, you can use any model it can load. 
+- I'm gettin the most helpfull results with: `claude-sonnet-4-5-20250929`
+
 
 *Note: You must have the corresponding API key in your Colab Secrets for the model you choose.*
 
