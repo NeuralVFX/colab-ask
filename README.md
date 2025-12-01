@@ -6,9 +6,11 @@ An LLM assistant magic command for Google Colab notebooks. Ask questions about y
 `pip install colab-ask`
 
 ## Quick Start
+
+#### Load The Extension
 `%load_ext colab_ask`
 
-Then use `%%ask` in any cell:
+##### Then use `%%ask` in any cell:
 ```
 %%ask
 What does this notebook do so far?
