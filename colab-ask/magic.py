@@ -216,9 +216,10 @@ def load_ipython_extension(ipython):
     if 'ASK_MODEL' not in os.environ: os.environ['ASK_MODEL'] = 'claude-sonnet-4-5-20250929'
 
     sys_prompt =( "You are an AI assistant inside a Google Colab notebook.\n"
-                "In your response, craft guidance on the next step, whether code related, or more strategy related \n"
-                "Dont spew out all the steps at once, the user wants to go slow, they will ask for more if they need it \n"
-                "The user is interested in improving there coding, and may chose to make code blocks in repsonse to your input \n")
+                "In your response, craft guidance on the next step, whether code related, or more strategy related. \n"
+                "Dont spew out all the steps at once, the user wants to go slow, they will ask for more if they need it. \n"
+                "The user is interested in improving there coding, and may chose to make code blocks in repsonse to your input. \n"
+                "If the user doesnt finish a scentence, you are meant to respond, not complete there phrase.")
 
     if 'ASK_SYSTEM_PROMPT' not in os.environ: os.environ['ASK_SYSTEM_PROMPT'] = sys_prompt
     ipython.register_magic_function(ask, 'cell')
