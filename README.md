@@ -9,7 +9,7 @@ It’s a magic command that sends your **code, outputs, and even generated image
 
 ## ✨ Why use this?
 * **👀 Context Aware:** It sees your text and code cells, and error traces.
-* **📊 Vision Capable:** It can see embedded images an graphs.
+* **📊 Vision Capable:** It can see embedded images and graphs.
 * **⚡ Native Integration:** Lives inside Colab. No alt-tabbing to ChatGPT.
 * **🔒 Privacy First:** Your data goes straight to the API. No middleman servers.
 
@@ -45,7 +45,7 @@ Look at the plot above. Is the model overfitting?
 ## ⚙️ Configuration
 
 **Change Model:**
-Uses LiteLLM under the hood. Any supported model string works.
+Uses LiteLLM under the hood. Any supported model string works. Check [https://docs.litellm.ai/docs/providers](https://docs.litellm.ai/docs/providers)
 ```python
 %set_model claude-3-5-sonnet-20241022
 ```
