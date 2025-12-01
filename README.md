@@ -7,7 +7,7 @@
 
 It’s a magic command that sends your **code, outputs, and even generated images** (matplotlib, etc.) directly to models like Claude or GPT-4 for context-aware help.
 
-## ✨ Why use this?
+## Why use this?
 * **👀 Context Aware:** It sees your text and code cells, and error traces.
 * **📊 Vision Capable:** It can see embedded images and graphs.
 * **⚡ Native Integration:** Lives inside Colab. No alt-tabbing to ChatGPT.
@@ -15,7 +15,7 @@ It’s a magic command that sends your **code, outputs, and even generated image
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 Run this in a cell to install and load the extension:
 
 ```python
@@ -42,7 +42,7 @@ Look at the plot above. Is the model overfitting?
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 **Change Model:**
 Uses LiteLLM under the hood. Any supported model string works. Check [https://docs.litellm.ai/docs/providers](https://docs.litellm.ai/docs/providers)
@@ -58,11 +58,11 @@ You are a senior Python engineer. Be concise.
 Focus on performance optimization and vectorized operations.
 ```
 
-## 🔑 Requirements
+## Requirements
 1.  **Google Colab**
 2.  **API Keys:** Add your keys (e.g., `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`) to **Colab Secrets** (the key icon on the left sidebar).
 
-## 🔒 Privacy & Data
+## Privacy & Data
 * **Direct Communication:** Notebook data is sent directly from your browser/runtime to the LLM provider (OpenAI/Anthropic/Google).
 * **Zero Logs:** We do not run a middleware server. We do not store your code.
 
