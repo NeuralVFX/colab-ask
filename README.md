@@ -63,7 +63,6 @@ Focus on performance optimization and vectorized operations.
 2.  **API Keys:** Add your keys (e.g., `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`) to **Colab Secrets** (the key icon on the left sidebar).
 
 ## 🔒 Privacy & Data
-We take security seriously:
 * **Direct Communication:** Notebook data is sent directly from your browser/runtime to the LLM provider (OpenAI/Anthropic/Google).
 * **Zero Logs:** We do not run a middleware server. We do not store your code.
 
