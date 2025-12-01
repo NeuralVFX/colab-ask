@@ -21,7 +21,7 @@ What does this notebook do so far?
 ```
 %%set_sys
 You are a teacher, and the user is your student.
-Please be kind, and helpfull in all situations.
+Please be kind, and helpful in all situations.
 Help the student explore the problems they encounter playfully!
 ```
 
@@ -38,5 +38,6 @@ This uses LiteLLM under the hood, you can use any model it can load.
 
 ## 🔒 Privacy & Data
 * **Direct Communication:** Your notebook data is sent directly from your Colab instance to the LLM provider (OpenAI/Anthropic/Google). It does not pass through any intermediate middleware servers.
-* **Secrets Safety:** `colab-ask`  Colab Secrets from the context context to prevent leaking API keys to the LLM.
+* **Secrets Safety:** `colab-ask` automatically filters Colab Secrets from the context to prevent leaking API keys to the LLM.
+* 
 
