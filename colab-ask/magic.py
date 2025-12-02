@@ -149,7 +149,7 @@ def prep_code_cell_output(code_cell,cell_type='Code'):
         
     for block in code_cell['outputs']:
 
-        if block['output_type'] == 'display_data':
+        if block['output_type'] in [ 'display_data']:
             image_keys = [key for key in block['data'].keys() if 'image' in key]
             for key in  block['data'].keys():
                 if 'image' in key:
@@ -157,7 +157,10 @@ def prep_code_cell_output(code_cell,cell_type='Code'):
                     output_image_bytes = base64.b64decode(base_64_text)
                     output_list.append(output_image_bytes)
                 if 'text' in key:
-                    output_list.append(block['data'][key])
+                    content = block['data'][key]
+                    if isinstance(content, list):
+                        content = "".join(content)
+                    output_list.append(content)
 
 
         elif block['output_type'] == 'stream':
