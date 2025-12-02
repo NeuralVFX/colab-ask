@@ -149,7 +149,7 @@ def prep_code_cell_output(code_cell,cell_type='Code'):
         
     for block in code_cell['outputs']:
 
-        if block['output_type'] in [ 'display_data']:
+        if block['output_type'] in ['display_data', 'execute_result']:
             image_keys = [key for key in block['data'].keys() if 'image' in key]
             for key in  block['data'].keys():
                 if 'image' in key:
