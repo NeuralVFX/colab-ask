@@ -225,34 +225,7 @@ def preprare_chat_history(cell_list):
             if formatted:
                 cell_context.append( {"role": response_role, "content":formatted} )
     return cell_context
-    
 
-def ask(line, cell):
-    """
-    The %%ask cell magic handler.
-    """
-    # Get notebook JSON
-    notebook_json = _message.blocking_request('get_ipynb')
-
-    # Your existing function
-    response = ask_llm(notebook_json, cell)
-
-
-def set_model(line):
-    """
-    Magic command (%set_model) to change the active LLM.
-    """
-    os.environ['ASK_MODEL'] = line.strip()
-    print(f"Model set to: {line.strip()}")
-
-
-def set_sys(line, cell):
-    """
-    Magic command (%%set_sys) to update the system prompt.
-    """
-    os.environ['ASK_SYSTEM_PROMPT'] = cell.strip()
-    print(f"System prompt updated")
-    
 
 def ask_llm(json_data, magic_input):
     """
@@ -289,6 +262,36 @@ def ask_llm(json_data, magic_input):
               html_output = mistune.html(accumulated_text)
               display_handle.update(HTML(html_output+'<script>Prism.highlightAll()</script>'))
               
+#############################
+#  Magic Functions
+#############################
+
+def ask(line, cell):
+    """
+    The %%ask cell magic handler.
+    """
+    # Get notebook JSON
+    notebook_json = _message.blocking_request('get_ipynb')
+
+    # Your existing function
+    response = ask_llm(notebook_json, cell)
+
+
+def set_model(line):
+    """
+    Magic command (%set_model) to change the active LLM.
+    """
+    os.environ['ASK_MODEL'] = line.strip()
+    print(f"Model set to: {line.strip()}")
+
+
+def set_sys(line, cell):
+    """
+    Magic command (%%set_sys) to update the system prompt.
+    """
+    os.environ['ASK_SYSTEM_PROMPT'] = cell.strip()
+    print(f"System prompt updated")
+    
 
 def load_ipython_extension(ipython):
     """
