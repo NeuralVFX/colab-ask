@@ -22,7 +22,7 @@ Run this in a cell to install and load the extension:
 
 ```python
 !pip install colab-ask
-%load_ext colab_ask
+%load_ext colab-ask
 ```
 
 ### 1. The Basic Ask
