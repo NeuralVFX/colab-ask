@@ -7,7 +7,7 @@ long_description = (HERE / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="colab-ask",
-    version="0.1.2",
+    version="0.1.3",
     description="An LLM assistant magic command for Google Colab notebooks.", 
     long_description=long_description,
     long_description_content_type="text/markdown",
