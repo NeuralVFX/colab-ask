@@ -261,7 +261,8 @@ def ask_llm(json_data, magic_input):
               accumulated_text += chunk.choices[0].delta.content
               html_output = mistune.html(accumulated_text)
               display_handle.update(HTML(html_output+'<script>Prism.highlightAll()</script>'))
-              
+
+
 #############################
 #  Magic Functions
 #############################
