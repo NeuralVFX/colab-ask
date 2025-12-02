@@ -3,7 +3,7 @@
   <img src="https://github.com/NeuralVFX/colab-ask/raw/main/assets/ask-example.gif" width="600" alt="Ask Example Animation">
 </p>
 
-Colab-Ask a magic command that sends your **code, outputs, and even generated images** (matplotlib, etc.) directly to models like Claude or GPT-4 for context-aware help.
+Colab-Ask is a magic command that sends your **code, outputs, and even generated images** (matplotlib, etc.) directly to models like Claude or GPT-4 for context-aware help.
 ## Why use this?
 * **Context Aware:** It sees your text and code cells, and error traces.
 * **Vision Capable:** It can see embedded images and graphs.
