@@ -71,7 +71,7 @@ Don't spew out all the steps at once, the user wants to go slow, they will ask f
 The user is interested in improving their coding, and may choose to make code blocks in response to your input.
 ```
 
-This prompt is inspired by **[SolveIt](https://github.com/AnswerDotAI/solveit)** (the fast.ai dialog engineering environment), which emphasizes:
+This prompt is inspired by **[SolveIt](https://github.com/AnswerDotAI/solveit](https://solve.it.com/)** (the fast.ai dialog engineering environment), which emphasizes:
 * **Small steps:** Breaking down problems incrementally
 * **Interactive learning:** Waiting for user feedback before proceeding
 * **Code-focused:** Encouraging hands-on implementation
