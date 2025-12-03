@@ -2,6 +2,7 @@ import io
 import os
 import re
 import base64
+import json
 
 # Third-party imports
 import mistune
@@ -148,19 +149,35 @@ def prep_code_cell_output(code_cell,cell_type='Code'):
         output_list = []
         
     for block in code_cell['outputs']:
-
         if block['output_type'] in ['display_data', 'execute_result']:
-            image_keys = [key for key in block['data'].keys() if 'image' in key]
             for key in  block['data'].keys():
-                if 'image' in key:
-                    base_64_text = block['data'][key]
-                    output_image_bytes = base64.b64decode(base_64_text)
-                    output_list.append(output_image_bytes)
-                if 'text' in key:
-                    content = block['data'][key]
-                    if isinstance(content, list):
-                        content = "".join(content)
-                    output_list.append(content)
+
+                out_data = None
+                block_data = block['data'][key]
+
+                if key.endswith('json'):
+                    try:
+                        out_data = json.dumps(block_data,indent=4)
+
+                    except Exception as e:
+                        out_data = f'[Un-Serializable JSON Output: {key}]'
+
+                elif key.startswith('image'):
+                    try:
+                        out_data = base64.b64decode(block_data)
+
+                    except Exception as e:
+                        out_data = f'[Un-Encodable Image Output: {key}]'
+
+                elif key.startswith('text'):
+                    if isinstance(block_data, list):
+                        out_data = "".join(block_data)
+                    else:
+                        out_data = block_data
+                else:
+                    out_data = f'[Un-Renderable Output Type: {key}]'
+                
+                output_list.append(out_data)
 
 
         elif block['output_type'] == 'stream':
@@ -171,7 +188,7 @@ def prep_code_cell_output(code_cell,cell_type='Code'):
             output_list.append(f'evalue:{block['evalue']}\n\n traceback:{block['traceback']}')  
 
     return output_list
-
+    
 
 def is_ask_cell(cell):
     """
